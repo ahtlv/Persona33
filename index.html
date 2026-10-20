@@ -4,77 +4,19 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Форрест Гамп — визитка</title>
-<style>
-:root{
-  --bg:#faf7f2; --ink:#2a2622; --muted:#6d655d; --card:#fff; --line:#e8e1d6;
-  --accent:#c8553d;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.7 Georgia,"Iowan Old Style","Times New Roman",serif;-webkit-font-smoothing:antialiased}
-img{display:block;max-width:100%}
-.wrap{max-width:860px;margin:0 auto;padding:0 20px}
-h1,h2,h3{font-family:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;line-height:1.15;margin:0}
-h2{font-size:clamp(1.6rem,4vw,2.1rem);letter-spacing:-.01em;margin-bottom:.6em}
-h2::before{content:"";display:block;width:44px;height:4px;background:var(--accent);border-radius:2px;margin-bottom:14px}
-h3{font-size:1.15rem;margin:1.6em 0 .5em}
-p{margin:0 0 1em}
-strong{color:var(--accent);font-weight:700}
-section{padding:64px 0 8px}
-
-/* hero */
-.hero{position:relative;min-height:78vh;display:flex;align-items:flex-end;color:#fff;
-  background:linear-gradient(to top,rgba(15,12,10,.82) 0%,rgba(15,12,10,.5) 55%,rgba(15,12,10,.35) 100%),url(images/running.jpg) center/cover no-repeat}
-.hero .wrap{padding-top:120px;padding-bottom:56px}
-.eyebrow{font:600 .8rem/1 -apple-system,"Segoe UI",sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#ffb8a6;margin-bottom:18px}
-.hero h1{font-size:clamp(2.6rem,9vw,5rem);letter-spacing:-.02em}
-.hero p{max-width:34em;font-size:1.2rem;margin:18px 0 0;color:#f3ece4}
-
-/* about */
-.lead{font-size:1.25rem}
-.timeline{list-style:none;margin:0;padding:0;border-left:3px solid var(--line)}
-.timeline li{position:relative;padding:0 0 18px 24px}
-.timeline li::before{content:"";position:absolute;left:-9px;top:.65em;width:15px;height:15px;border-radius:50%;background:var(--accent);border:3px solid var(--bg)}
-
-/* work */
-.feature{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center;margin:28px 0}
-.feature img{width:100%;height:100%;min-height:260px;object-fit:cover;border-radius:14px}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin:24px 0}
-.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
-.card h3{margin:0 0 .4em;font-size:1.05rem}
-.card p{margin:0;font-size:.98rem;color:var(--muted);line-height:1.6}
-.card.photo{padding:0;overflow:hidden;display:flex;flex-direction:column}
-.card.photo img{width:100%;height:170px;object-fit:cover}
-.card.photo div{padding:22px}
-.resources{background:var(--card);border-left:4px solid var(--accent);border-radius:0 12px 12px 0;padding:18px 22px;margin-top:24px}
-
-/* facts */
-.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;list-style:none;padding:0;margin:0 0 24px}
-.facts li{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px;font-size:1rem;line-height:1.6}
-.accent-img{position:relative;margin:28px 0}
-.accent-img img{width:100%;height:220px;object-fit:cover;border-radius:14px}
-
-/* finale */
-.finale{position:relative;margin-top:72px;color:#fff;text-align:center;
-  background:linear-gradient(rgba(20,12,6,.68),rgba(20,12,6,.78)),url(images/bench.jpg) center/cover no-repeat}
-.finale .wrap{padding-top:96px;padding-bottom:96px}
-blockquote{margin:0 auto;max-width:28em;font-size:clamp(1.4rem,4vw,2rem);line-height:1.4;font-style:italic}
-blockquote footer{margin-top:18px;font:600 .85rem -apple-system,"Segoe UI",sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#ffb8a6;font-style:normal}
-.finale p{margin:28px auto 0;max-width:30em;color:#f0e6dc}
-
-footer.credits{font:.78rem/1.6 -apple-system,"Segoe UI",sans-serif;color:var(--muted);padding:28px 20px 40px;max-width:860px;margin:0 auto}
-footer.credits a{color:inherit}
-
-@media(max-width:640px){
-  body{font-size:17px}
-  section{padding-top:48px}
-  .feature{grid-template-columns:1fr}
-  .feature img{min-height:200px;height:220px}
-  .hero{min-height:70vh}
-}
-</style>
+<script>
+try{var t=localStorage.getItem('theme');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)}catch(e){}
+</script>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<nav class="nav">
+  <div class="wrap">
+    <ul><li><a href="index.html" aria-current="page">Главная</a></li><li><a href="about.html">Обо мне</a></li><li><a href="work.html">Чем занимаюсь</a></li><li><a href="facts.html">Факты</a></li><li><a href="contacts.html">Контакты</a></li></ul>
+    <button class="theme-toggle" type="button" aria-label="Переключить тему"><span class="sun" aria-hidden="true">☀️</span><span class="moon" aria-hidden="true">🌙</span></button>
+  </div>
+</nav>
 
 <header class="hero">
   <div class="wrap">
@@ -86,66 +28,15 @@ footer.credits a{color:inherit}
 
 <main class="wrap">
 
-<section id="about">
-  <h2>Обо мне</h2>
-  <p class="lead">Мама всегда говорила: «Жизнь — как коробка шоколадных конфет: никогда не знаешь, какая начинка попадётся». Я так и живу — беру, что дают, и стараюсь, чтобы вышло хорошо. Обычно выходит.</p>
-  <p>Люди говорят, я простоват. Может, и так. Мама говорила: «Глупый тот, кто глупо поступает». Я стараюсь поступать хорошо, а умный я или нет — пусть другие считают. Мне некогда, я обычно куда-нибудь бегу.</p>
-
-  <h3>Какой я</h3>
-  <p>Я <strong>честный, добрый и очень упорный</strong>. Если я что-то пообещал — я сделаю, даже если на это уйдут годы. Я не умею хитрить и врать — просто не понимаю, как это и зачем. Наверное, поэтому мне люди доверяют.</p>
-  <p>А ещё я <strong>умею не сдаваться</strong>. Что бы ни случилось, я встаю и иду дальше. Или бегу. Однажды я просто начал бежать и бежал три года — за мной побежала целая толпа. Люди почему-то идут за тем, кто просто не останавливается.</p>
-
-  <h3>Немного судьбы</h3>
-  <ul class="timeline">
-    <li>Был <strong>чемпионом по пинг-понгу</strong>, играл за сборную и съездил в Китай. Мама бы гордилась.</li>
-    <li>Служил в армии, где встретил лучшего друга <strong>Баббу</strong>. Он рассказал мне всё про креветок. Я запомнил.</li>
-    <li>После войны <strong>купил лодку и начал ловить креветок</strong> — в память о Баббе.</li>
-    <li>Всю жизнь люблю одну девушку — <strong>Дженни</strong>. Некоторые вещи в жизни просто есть, и всё.</li>
-  </ul>
-</section>
-
-<section id="work">
-  <h2>Чем занимаюсь</h2>
-  <p>Я не очень разбираюсь в умных словах про бизнес. Но кое-что у меня получилось. Расскажу как есть.</p>
-
-  <div class="feature">
-    <img src="images/shrimp.jpg" alt="Свежие креветки" loading="lazy">
-    <div>
-      <h3 style="margin-top:0">Креветочная компания «Бабба-Гамп»</h3>
-      <p>Мой друг Бабба мечтал ловить креветок, но не успел. Я пообещал — и сделал за нас двоих. Купил лодку, назвал «Дженни», и сначала не ловилось ничегошеньки. А потом случился шторм, все другие лодки поломались, а моя уцелела. Так вышла <strong>целая компания</strong>.</p>
-    </div>
-  </div>
-
+<section>
+  <h2>Здравствуй</h2>
+  <p class="lead">Меня зовут Форрест. Я из Гринбоу, это в Алабаме. Тут можно узнать, какой я, чем занимаюсь и что со мной случалось.</p>
   <div class="cards">
-    <div class="card"><h3>«Бабба-Гамп Шримп»</h3><p>Лодки, улов, поставки. Я не гений, зато честный, и люди это ценят. Партнёр — лейтенант Дэн, он занимается умными денежными штуками.</p></div>
-    <div class="card"><h3>Удачные вложения</h3><p>Лейтенант Дэн вложил наши деньги в «какую-то фруктовую компанию» — кажется, с яблоком. С тех пор о деньгах волноваться не нужно.</p></div>
-    <div class="card"><h3>Бег</h3><p>Начал бежать через всю Америку — и бежал три года. За мной пошли люди и журналисты. Я случайно вдохновил кучу народу. Просто ногами.</p></div>
-    <div class="card photo">
-      <img src="images/pingpong.jpg" alt="Стол для пинг-понга" loading="lazy">
-      <div><h3>Пинг-понг и служба</h3><p>Был чемпионом, служил стране, получил медаль. Делал что должно и не жаловался.</p></div>
-    </div>
+    <a class="card contact-card" href="about.html"><div><h3>Обо мне</h3><p>Какой я и немного судьбы.</p></div></a>
+    <a class="card contact-card" href="work.html"><div><h3>Чем занимаюсь</h3><p>Креветки, бег и пинг-понг.</p></div></a>
+    <a class="card contact-card" href="facts.html"><div><h3>Факты</h3><p>Мамины поговорки и всякое разное.</p></div></a>
+    <a class="card contact-card" href="contacts.html"><div><h3>Контакты</h3><p>Как меня найти.</p></div></a>
   </div>
-
-  <div class="resources"><strong>Чем располагаю:</strong> честное имя, лодка, компания, добрый друг лейтенант Дэн, немножко денег (на самом деле много) и <strong>привычка никогда не сдаваться</strong>. Мама говорила, это дороже ума.</div>
-</section>
-
-<section id="facts">
-  <h2>Интересные факты</h2>
-  <ul class="facts">
-    <li>Часто вспоминаю <strong>мамины поговорки</strong> — они всегда почему-то подходят к случаю.</li>
-    <li><strong>Очень люблю бегать.</strong> Когда на душе тяжело или хорошо — просто бегу. Помогает лучше умных советов.</li>
-    <li><strong>Всё делаю до конца.</strong> Пообещал ловить креветок — ловлю. Начал бежать — бегу.</li>
-    <li><strong>Говорю что думаю</strong>, простыми словами. Некоторые смеются, а потом запоминают именно их.</li>
-    <li>Не считаю себя умным, но со мной случилось больше удивительного, чем со многими профессорами.</li>
-    <li>Мою компанию <strong>спас обычный шторм</strong>. Удача приходит к тому, кто оказался в море и не сдался.</li>
-    <li><strong>Случайно стал богатым</strong> из-за «фруктовой компании». Лейтенант Дэн доволен.</li>
-    <li>Главное, что понял: <strong>доброта и упорство работают лучше хитрости.</strong> Это, кажется, и есть ум — по-моему.</li>
-  </ul>
-
-  <div class="accent-img"><img src="images/feather.jpg" alt="Пёрышко, плывущее вниз в лесу" loading="lazy"></div>
-
-  <h3>Как со мной работать</h3>
-  <p>Будьте честны, и я буду честен с вами. Я не понимаю интриг — зато я надёжный, добрый и никогда не брошу начатое. Дайте мне простое понятное дело и хорошего друга рядом — и я доведу всё до конца, даже если придётся бежать за этим через всю страну. И, пожалуйста, не обманывайте — это единственное, чего я по-настоящему не люблю.</p>
 </section>
 
 </main>
@@ -169,5 +60,6 @@ footer.credits a{color:inherit}
   фото с пёрышком — Dave Bonta, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0</a>. Источник — Flickr, подборка через Openverse.
 </footer>
 
+<script src="theme.js"></script>
 </body>
 </html>
